@@ -17,7 +17,6 @@ import com.vvcampos.minhasfinancas.model.enums.StatusLancamento;
 import com.vvcampos.minhasfinancas.model.enums.TipoLancamento;
 import com.vvcampos.minhasfinancas.model.repository.LancamentoRepository;
 import com.vvcampos.minhasfinancas.service.LancamentoService;
-import com.vvcampos.minhasfinancas.service.UsuarioService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -107,7 +106,7 @@ public class LancamentoServiceImpl implements LancamentoService {
 		BigDecimal receitas = repository.obterSaldoPorTipoLancamentoEUsuario(id, TipoLancamento.RECEITA);
 		BigDecimal despesas = repository.obterSaldoPorTipoLancamentoEUsuario(id, TipoLancamento.DESPESA);
 		
-		if(receitas == null ) {
+		if(receitas == null ) {	
 			receitas = BigDecimal.ZERO;
 		}
 		
